@@ -18,6 +18,13 @@ class Species
     @id = result["id"].to_i()
   end
 
+    def self.all()
+      sql = "SELECT * FROM species"
+      result = SqlRunner.run(sql)
+      return result.map do |species| Species.new(species)
+      end
+    end
+
 
 
 end
