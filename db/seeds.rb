@@ -22,7 +22,8 @@ plant1 = Plant.new(
     "description" => "Red prayer plant shows off dark green leaves, purple markings, and rich red veins.",
     "stock_quantity" => 4,
     "buying_cost" => 5,
-    "selling_price" => 10
+    "selling_price" => 10,
+    "species_id" => maranta.id
     })
     plant1.save
 
