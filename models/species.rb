@@ -42,6 +42,13 @@ class Species
       result = SqlRunner.run(sql, values)
     end
 
+    def plants()
+      sql = "SELECT * FROM plants WHERE species_id = $1"
+      values = [@id]
+      result = SqlRunner.run(sql, values)
+      return result.map do |plant| Plant.new(plant)
+      end
+    end
 
 
 
