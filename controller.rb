@@ -11,3 +11,9 @@ get '/plant-shop/plants' do
   @plants = Plant.all()
   erb (:plant_index)
 end
+
+#SHOW
+get '/plant-shop/plants/:id' do
+  @plant = Plant.find(params[:id])
+  erb (:show)
+end

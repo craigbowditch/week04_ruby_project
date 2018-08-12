@@ -52,4 +52,12 @@ class Plant
     result = SqlRunner.run(sql, values).first
     return Species.new(result)
   end
+
+  def self.find( id )
+    sql = "SELECT * FROM plants WHERE id = $1"
+    values = [id]
+    plant = SqlRunner.run( sql, values )
+    result = Plant.new(plant.first)
+    return result
+  end
 end
