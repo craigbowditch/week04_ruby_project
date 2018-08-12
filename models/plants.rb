@@ -21,6 +21,13 @@ class Plant
     @id = result["id"].to_i()
   end
 
+  def self.all()
+    sql = "SELECT * from plants"
+    result = SqlRunner.run(sql)
+    return result.map do |plant| Plant.new(plant)
+    end
+  end
+
 
 
 
