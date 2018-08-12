@@ -1,0 +1,11 @@
+<h1>List of Plants</h1>
+
+<% @plants.each do |plant| %>
+<p>Name: <%= plant.name %></p>
+<p>Latin Name: <%= plant.latin_name %></p>
+<p>Description: <%= plant.description %></p>
+<p>Stock Quantity: <%= plant.stock_quantity %></p>
+<p>Buying Cost: <%= plant.buying_cost %></p>
+<p>Selling Price: <%= plant.selling_price %></p>
+<hr/>
+<% end %>
