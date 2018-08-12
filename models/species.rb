@@ -31,6 +31,11 @@ class Species
       result = SqlRunner.run(sql, values)
     end
 
+    def self.delete()
+      sql = "DELETE FROM species"
+      SqlRunner.run(sql)
+    end
+
 
 
 end
