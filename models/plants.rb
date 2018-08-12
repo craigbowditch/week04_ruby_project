@@ -39,22 +39,9 @@ class Plant
     SqlRunner.run(sql)
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  def delete_one()
+    sql = "DELETE FROM plants WHERE id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+  end
 end

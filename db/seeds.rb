@@ -4,6 +4,7 @@ require_relative('../models/plants.rb')
 
 require ('pry')
 
+Plant.delete()
 Species.delete()
 
 maranta = Species.new(
