@@ -28,6 +28,12 @@ class Plant
     end
   end
 
+  def update()
+    sql = "UPDATE plants SET (name, latin_name, description, stock_quantity, buying_cost, selling_price) = ($1, $2, $3, $4, $5, $6) Where id = $7"
+    values = [@name, @latin_name, @description, @stock_quantity, @buying_cost, @selling_price, @id]
+    result = SqlRunner.run(sql, values)
+  end
+
 
 
 
