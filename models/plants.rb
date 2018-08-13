@@ -60,4 +60,14 @@ class Plant
     result = Plant.new(plant.first)
     return result
   end
+
+  def stock_level()
+    if @stock_quantity == 0
+      return "Out Of Stock"
+    elsif @stock_quantity < 3
+      return "Low Stock"
+    else
+      return "In Stock"
+    end
+  end
 end

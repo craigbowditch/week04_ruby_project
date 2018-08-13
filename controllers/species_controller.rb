@@ -33,9 +33,21 @@ get '/plant-shop/species/:id' do
 end
 
 #DELETE
-
 post '/plant-shop/species/:id/delete' do
   @species = Species.find(params[:id])
   @species.delete_one
+  redirect "http://localhost:4567/plant-shop/species"
+end
+
+#EDIT
+get '/plant-shop/species/:id/edit' do
+  @species = Species.find(params[:id])
+  erb (:"species/edit")
+end
+
+#UPDATE
+post '/plant-shop/species/:id/update' do
+  @species = Species.new(params)
+  @species.update()
   redirect "http://localhost:4567/plant-shop/species"
 end
