@@ -1,0 +1,7 @@
+<h1>List of Species</h1>
+
+<% @species.each do |type| %>
+<p>Name: <%= type.name %></p>
+<p>Common Name: <%=type.common_name %></p>
+<hr/>
+<% end %>

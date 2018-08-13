@@ -4,32 +4,33 @@ require ('pry-byebug')
 
 require_relative ('models/plants.rb')
 require_relative ('models/species.rb')
+require_relative ('./species_controller.rb')
 
 also_reload ('models/*')
 
 #INDEX
 get '/plant-shop/plants' do
   @plants = Plant.all()
-  erb (:plant_index)
+  erb (:"plants/index")
 end
 
 #NEW
 get '/plant-shop/plants/new' do
   @species = Species.all()
-  erb (:new)
+  erb (:"plants/new")
 end
 
 #CREATE
 post '/plant-shop/plants' do
   @plant = Plant.new(params)
   @plant.save()
-  erb (:create)
+  erb (:"plants/create")
 end
 
 #SHOW
 get '/plant-shop/plants/:id' do
   @plant = Plant.find(params[:id])
-  erb (:show)
+  erb (:"plants/show")
 end
 
 #DELETE
@@ -43,7 +44,7 @@ end
 get '/plant-shop/plants/:id/edit' do
   @plant = Plant.find(params[:id])
   @species = Species.all()
-  erb (:edit)
+  erb (:"plants/edit")
 end
 
 #UPDATE
