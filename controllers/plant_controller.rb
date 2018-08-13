@@ -2,11 +2,11 @@ require ('sinatra')
 require ('sinatra/contrib/all') if development?
 require ('pry-byebug')
 
-require_relative ('models/plants.rb')
-require_relative ('models/species.rb')
+require_relative ('../models/plants.rb')
+require_relative ('../models/species.rb')
 require_relative ('./species_controller.rb')
 
-also_reload ('models/*')
+also_reload ('../models/*')
 
 #INDEX
 get '/plant-shop/plants' do

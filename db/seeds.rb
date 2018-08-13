@@ -15,6 +15,14 @@ maranta = Species.new(
     })
     maranta.save()
 
+fern = Species.new(
+  {
+    "name" => "Pteridophytes",
+    "common_name" => "Fern",
+    "description" => "A fern is a member of a group of vascular plants (plants with xylem and phloem) that reproduce via spores and have neither seeds nor flowers."
+    })
+    fern.save()
+
 plant1 = Plant.new(
   {
     "name" => "Red Prayer Plant",

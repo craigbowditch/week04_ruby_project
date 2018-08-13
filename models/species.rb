@@ -50,6 +50,14 @@ class Species
       end
     end
 
+    def self.find(id)
+      sql = "SELECT * FROM species WHERE id = $1"
+      values = [id]
+      species = SqlRunner.run(sql, values)
+      result = Species.new(species.first)
+      return result
+    end
+
 
 
 end
