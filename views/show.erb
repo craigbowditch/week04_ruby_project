@@ -4,3 +4,7 @@
 <p>Stock Quantity: <%= @plant.stock_quantity %></p>
 <p>Buying Cost: <%= @plant.buying_cost %></p>
 <p>Selling Price : <%= @plant.selling_price %></p>
+
+<form action="/plant-shop/plants/<%=@plant.id%>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>

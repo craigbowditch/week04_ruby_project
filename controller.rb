@@ -32,3 +32,10 @@ get '/plant-shop/plants/:id' do
   @plant = Plant.find(params[:id])
   erb (:show)
 end
+
+#DELETE
+post '/plant-shop/plants/:id/delete' do
+  @plant = Plant.find(params[:id])
+  @plant.delete_one()
+  redirect "http://localhost:4567/plant-shop/plants"
+end
