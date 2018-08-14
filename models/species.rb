@@ -2,18 +2,19 @@ require_relative("../db/sql_runner.rb")
 
 class Species
   attr_reader :id
-  attr_accessor :name, :common_name, :description
+  attr_accessor :name, :common_name, :description, :image
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
     @name = options["name"]
     @common_name = options["common_name"]
     @description = options["description"]
+    @image = options["image"]
   end
 
   def save()
-    sql = "INSERT into species (name, common_name, description) VALUES ($1, $2, $3) RETURNING id"
-    values = [@name, @common_name, @description]
+    sql = "INSERT into species (name, common_name, description, image) VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@name, @common_name, @description, @image]
     result = SqlRunner.run(sql, values).first
     @id = result["id"].to_i()
   end
@@ -26,7 +27,7 @@ class Species
     end
 
     def update()
-      sql = "UPDATE species SET (name, common_name, description) = ($1, $2, $3) WHERE id = $4"
+      sql = "UPDATE species SET (name, common_name, description, image) = ($1, $2, $3, $4) WHERE id = $5"
       values = [@name, @common_name, @description, @id]
       result = SqlRunner.run(sql, values)
     end

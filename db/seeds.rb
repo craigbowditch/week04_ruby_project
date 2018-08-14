@@ -11,15 +11,17 @@ maranta = Species.new(
   {
     "name" => "Maranta",
     "common_name" => "Prayer Plant",
-    "description" => "Maranta is a genus of flowering plants in the family Marantaceae, native to tropical Central and South America and the West Indies."
+    "description" => "Maranta is a genus of flowering plants in the family Marantaceae, native to tropical Central and South America and the West Indies.",
+    "image" => "/images/Maranta.jpg"
     })
     maranta.save()
 
 fern = Species.new(
   {
-    "name" => "Pteridophytes",
+    "name" => "Polypodiopsida",
     "common_name" => "Fern",
-    "description" => "A fern is a member of a group of vascular plants (plants with xylem and phloem) that reproduce via spores and have neither seeds nor flowers."
+    "description" => "A fern is a member of a group of vascular plants (plants with xylem and phloem) that reproduce via spores and have neither seeds nor flowers.",
+    "image" => "/images/fern.jpg"
     })
     fern.save()
 

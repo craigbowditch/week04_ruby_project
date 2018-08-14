@@ -5,7 +5,8 @@ CREATE TABLE species(
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 common_name VARCHAR(255),
-description TEXT
+description TEXT,
+image VARCHAR(255)
 );
 
 CREATE TABLE plants(
