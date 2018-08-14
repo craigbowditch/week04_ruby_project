@@ -14,6 +14,11 @@ get '/plant-shop/species' do
   erb (:"species/index")
 end
 
+get '/plant-shop/species/:id/plants' do
+  @species = Species.find(params[:id])
+  erb (:"species/plants")
+end
+
 #NEW
 get '/plant-shop/species/new' do
   erb (:"species/new")

@@ -2,7 +2,7 @@ require_relative ('../db/sql_runner.rb')
 
 class Plant
   attr_reader :id, :species_id
-  attr_accessor :name, :latin_name, :description, :stock_quantity, :buying_cost, :selling_price
+  attr_accessor :name, :latin_name, :description, :stock_quantity, :buying_cost, :selling_price, :image
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -13,11 +13,12 @@ class Plant
     @buying_cost = options["buying_cost"].to_i()
     @selling_price = options["selling_price"].to_i()
     @species_id = options["species_id"].to_i()
+    @image = options["image"]
   end
 
   def save()
-    sql = "INSERT into plants (name, latin_name, description, stock_quantity, buying_cost, selling_price, species_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id"
-    values = [@name, @latin_name, @description, @stock_quantity, @buying_cost, @selling_price, @species_id]
+    sql = "INSERT into plants (name, latin_name, description, stock_quantity, buying_cost, selling_price, species_id, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
+    values = [@name, @latin_name, @description, @stock_quantity, @buying_cost, @selling_price, @species_id, @image]
     result = SqlRunner.run(sql, values).first
     @id = result["id"].to_i()
   end
@@ -30,8 +31,8 @@ class Plant
   end
 
   def update()
-    sql = "UPDATE plants SET (name, latin_name, description, stock_quantity, buying_cost, selling_price) = ($1, $2, $3, $4, $5, $6) Where id = $7"
-    values = [@name, @latin_name, @description, @stock_quantity, @buying_cost, @selling_price, @id]
+    sql = "UPDATE plants SET (name, latin_name, description, stock_quantity, buying_cost, selling_price, image) = ($1, $2, $3, $4, $5, $6, $7) Where id = $8"
+    values = [@name, @latin_name, @description, @stock_quantity, @buying_cost, @selling_price, @image, @id]
     result = SqlRunner.run(sql, values)
   end
 
@@ -68,6 +69,16 @@ class Plant
       return "Low Stock"
     else
       return "In Stock"
+    end
+  end
+
+  def stock_level_colour()
+    if @stock_quantity == 0
+      return "out"
+    elsif @stock_quantity < 3
+      return "low"
+    else
+      return "in"
     end
   end
 end

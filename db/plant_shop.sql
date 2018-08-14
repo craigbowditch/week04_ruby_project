@@ -16,5 +16,6 @@ CREATE TABLE plants(
   stock_quantity INT,
   buying_cost INT,
   selling_price INT,
-  species_id INT REFERENCES species(id) ON DELETE CASCADE
+  species_id INT REFERENCES species(id) ON DELETE CASCADE,
+  image VARCHAR(255)
 );

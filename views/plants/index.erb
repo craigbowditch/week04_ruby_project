@@ -1,9 +1,28 @@
 <h1>List of Plants</h1>
 
-<% @plants.each do |plant| %>
-<p>Name: <%= plant.name %></p>
-<p>Latin Name: <%= plant.latin_name %></p>
-<p>Stock Quantity: <%= plant.stock_quantity %> <%=plant.stock_level%></p>
-<p><a href="/plant-shop/plants/<%= plant.id %>">More Details</a></p>
-<hr/>
+
+
+
+<div class="grid">
+  <div class="grid-row">
+    <% @plants.each do |plant| %>
+    <div class="cell"><div class = "card">
+      <div class="container">
+        <p><img src="<%=plant.image%>" style = "width: 200px; height: 200px"></p>
+        <p><%= plant.name %></p>
+        <p id="latin-name"><%= plant.latin_name %></p>
+        <p>Species: <%= plant.species().name %></p>
+        <p>Stock Quantity: <%= plant.stock_quantity %></p>
+        <p class="<%=plant.stock_level_colour%>"> <%=plant.stock_level%></p>
+        <p><a href="/plant-shop/plants/<%= plant.id %>">More Details</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
 <% end %>

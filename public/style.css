@@ -1,0 +1,61 @@
+body {
+  background-color: #D0D8B3
+}
+
+nav {
+  font-family: helvetica;
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  width: 100px;
+}
+
+a {
+  color: inherit;
+    text-decoration: none;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 750px;
+  margin: auto;
+}
+
+.card {
+  box-shadow : 0 4px 8px 0 rgba(0,0,0,0.3);
+  width: 400px;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.in {
+  color: green;
+}
+
+.low {
+  color: orange;
+}
+
+.out {
+  color: red;
+}
+
+#latin-name {
+  font-style: italic;
+}

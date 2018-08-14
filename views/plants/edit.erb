@@ -1,9 +1,9 @@
 <form action="/plant-shop/plants/<%=@plant.id%>/update" method="post">
   <label for="name">Name</label>
-  <input id ="name" type = "text" name="name">
+  <input id ="name" type = "text" name="name" value= "<%=@plant.name%>">
 
   <label for="latin-name">Latin Name</label>
-  <input id ="latin-name" type = "text" name="latin_name">
+  <input id ="latin-name" type = "text" name="latin_name" value= "<%=@plant.latin_name%>">
 
   <label for="species">Species:</label>
   <select id ="species" name="species_id">
@@ -13,16 +13,19 @@
   </select>
 
   <label for="description">Description</label>
-  <input id ="description" type = "text" name="description">
+  <input id ="description" type = "text" name="description" value= "<%=@plant.description%>">
 
   <label for="stock-quantity">Stock Quantity</label>
-  <input id ="stock-quantity" type = "number" name="stock_quantity" required>
+  <input id ="stock-quantity" type = "number" name="stock_quantity" value= "<%=@plant.stock_quantity%>" required>
 
   <label for="buying-cost">Buying Cost</label>
-  <input id ="buying-cost" type = "number" name="buying_cost" required>
+  <input id ="buying-cost" type = "number" name="buying_cost" value= "<%=@plant.buying_cost%>" required>
 
   <label for="selling-price">Selling Price</label>
-  <input id ="selling-price" type = "number" name="selling_price" required>
+  <input id ="selling-price" type = "number" name="selling_price" value= "<%=@plant.selling_price%>" required>
+
+  <label for="image">Image(url)</label>
+  <input id ="image" type = "text" name="image" value= "<%@plant.image%>" required>
 
 <input type="submit" value="Update">
 </form>
