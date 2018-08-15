@@ -144,3 +144,12 @@ select {
   margin-left: auto;
   margin-right: auto;
 }
+
+.plant-list {
+  font-size: 18px;
+  text-align: center;
+}
+
+.plant-list-heading {
+  text-decoration: underline;
+}

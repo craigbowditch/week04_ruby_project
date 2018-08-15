@@ -1,8 +1,8 @@
 
 
-<h1>list of <%= @species.name.downcase() %></h1>
+<h1 class="plant-list-heading">list of <%= @species.name.downcase() %></h1>
 
 <% @species.plants.each do |type| %>
-<p> <a href="/plant-shop/plants/<%=type.id%>"><%=type.name%></a></p>
+<p class="plant-list"><a href="/plant-shop/plants/<%=type.id%>"><%=type.name%></a></p>
 
 <%end%>
