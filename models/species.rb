@@ -28,7 +28,7 @@ class Species
 
     def update()
       sql = "UPDATE species SET (name, common_name, description, image) = ($1, $2, $3, $4) WHERE id = $5"
-      values = [@name, @common_name, @description, @id]
+      values = [@name, @common_name, @description, @image, @id]
       result = SqlRunner.run(sql, values)
     end
 

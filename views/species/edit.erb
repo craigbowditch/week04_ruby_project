@@ -1,12 +1,15 @@
 <form action="/plant-shop/species/<%=@species.id%>/update" method="post">
   <label for="name">Name</label>
-  <input type="name" type = "text" name="name">
+  <input id="name" type = "text" name="name" value="<%=@species.name%>">
 
   <label for="common-name">Common Name</label>
-  <input type="common-name" type = "text" name="common_name">
+  <input id="common-name" type = "text" name="common_name" value= "<%=@species.common_name%>">
 
   <label for="description">Description</label>
-  <input type="description" type = "text" name="description">
+  <input id="description" type = "text" name="description" value= "<%=@species.description%>">
+
+  <label for="image">Image(url)</label>
+  <input id="image" type= "text" name="image" value= "<%=@species.image%>">
 <br>
   <input type="submit" value="Update">
 </form>
