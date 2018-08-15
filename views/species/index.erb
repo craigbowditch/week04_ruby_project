@@ -4,8 +4,8 @@
   <p><img class="index-image" src="<%=type.image%>"></p>
   <p>Name: <%= type.name %></p>
   <p>Common Name: <%=type.common_name %></p>
-  <p><a href="/plant-shop/species/<%= type.id %>">Click For More Details</a></p>
-  <p><a href="/plant-shop/species/<%= type.id %>/plants">List all <%=type.name%> plants</a></p>
+  <p><a href="/plant-shop/species/<%= type.id %>">Click for more details</a></p>
+  <p><a href="/plant-shop/species/<%= type.id %>/plants">List all <%=type.name()%> plants</a></p>
 </div>
 </div>
 <% end %>

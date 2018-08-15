@@ -16,6 +16,7 @@ end
 
 get '/plant-shop/species/:id/plants' do
   @species = Species.find(params[:id])
+  
   erb (:"species/plants")
 end
 

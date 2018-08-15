@@ -1,3 +1,8 @@
 
 
-<h1>List of <%= @species.name %></h1>
+<h1>list of <%= @species.name.downcase() %></h1>
+
+<% @species.plants.each do |type| %>
+<p> <a href="/plant-shop/plants/<%=type.id%>"><%=type.name%></a></p>
+
+<%end%>
