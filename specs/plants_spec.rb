@@ -1,6 +1,5 @@
 require("minitest/autorun")
 require_relative("../models/plants.rb")
-require_relative("../models/species.rb")
 
 class TestPlants < MiniTest::Test
 
